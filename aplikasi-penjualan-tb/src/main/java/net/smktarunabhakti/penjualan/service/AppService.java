@@ -1,22 +1,17 @@
 package net.smktarunabhakti.penjualan.service;
 
-import java.util.List;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
 
-import net.smktarunabhakti.penjualan.domain.barang;
+import net.smktarunabhakti.penjualan.domain.Barang;
 
 public interface AppService {
 	
-	void simpanBarang(barang b);
-	
-	void hapusBarang(barang b);
-	
-	//page?
-	Page<barang> cariSemuaBarang();
-	
-	barang cariBarangById(String id);
-	
+	void simpanBarang(Barang b);
+	void hapusBarang(Barang b);
+	Page<Barang> cariSemuaBarang(Pageable p);
+	Barang cariBarangId(String id);
 	Long countSemuaBarang();
-
+	
 }
